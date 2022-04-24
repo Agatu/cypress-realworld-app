@@ -172,7 +172,6 @@ jobs:
       - name: "UI Tests - Edge"
         uses: cypress-io/github-action@v2
         with:
-          command-prefix: "percy exec -- npx"
           start: yarn start:ci
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
@@ -182,7 +181,6 @@ jobs:
           # Recommended: pass the GitHub token lets this action correctly
           # determine the unique run id necessary to re-run the checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   ui-edge-mobile-tests:
     timeout-minutes: 15
